@@ -9,6 +9,7 @@ UserModel = get_user_model()
 
 # Create your models here.
 class UsersProfileModel(models.Model):
+
     class Meta:
         db_table = 'users_profile'
 
@@ -16,8 +17,8 @@ class UsersProfileModel(models.Model):
         v.MinValueValidator(18),
         v.MaxValueValidator(150)
     ])
-    father_name = models.CharField(max_length=60)
-    region = models.CharField(max_length=50)
-    city = models.CharField(max_length=80)
+    father_name = models.CharField(max_length=200)
+    region = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
     avatar = models.ImageField(upload_to=avatar_upload)
     user = models.OneToOneField(UserModel, on_delete=models.CASCADE, related_name='profile')

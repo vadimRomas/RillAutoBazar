@@ -20,13 +20,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('secret_key')
+SECRET_KEY = 'kjhkjhhjhkkghkjkhkjhkhkj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DEBUG'))
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
+
+
 # Application definition
 AUTH_USER_MODEL = 'User.UsersModel'
 INSTALLED_APPS = [
@@ -86,10 +88,11 @@ WSGI_APPLICATION = 'RillAutoBazar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('NAME'),
-        'USER': os.environ.get('user'),
-        'PASSWORD': os.environ.get('password'),
-        'HOST': os.environ.get('host'),
+        'NAME': 'ril_auto_bazar_db',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': 3306
     }
 }
 

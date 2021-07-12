@@ -3,8 +3,7 @@ from rest_framework.serializers import ModelSerializer
 from .models import UsersProfileModel
 
 
-
-class UserProfileSerializers(ModelSerializer):
+class UserProfileSerializer(ModelSerializer):
     class Meta:
         model = UsersProfileModel
-        fields = []
+        fields = ['father_name', 'age', 'region', 'city', 'avatar', 'id']
